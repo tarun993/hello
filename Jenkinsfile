@@ -13,7 +13,7 @@ pipeline {
     }
     
     triggers {
-        parameterizedCron('''
+        cron('''
             * * * * * %EXECUTE_PULL = true
             */2 * * * * %EXECUTE_PUSH = true
         ''')
