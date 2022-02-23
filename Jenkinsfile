@@ -6,6 +6,7 @@ pipeline {
         
     }
     parameters {
+        booleanParam(name: 'parameter_name', value: false)
         booleanParam{name: 'EXECUTE_PULL', defaultValue: false}
         booleanParam{name: 'EXECUTE_PUSH', defaultValue: false}
     }
