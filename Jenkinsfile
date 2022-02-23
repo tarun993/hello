@@ -24,7 +24,7 @@ pipeline {
         
         stage('Hello_pull') {
             
-            when {expression {EXECUTE_PULL == "true"}
+            when {expression {EXECUTE_PULL == "true"}}
             
             steps {
                 echo 'Hello World pull'
@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Hello_push') {
                 
-            when {expression {EXECUTE_PUSH == "true"}
+            when {expression {EXECUTE_PUSH == "true"}}
             
             steps {
                 echo 'Hello World push'
