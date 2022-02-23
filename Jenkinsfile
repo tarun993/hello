@@ -7,6 +7,8 @@ pipeline {
     }
     parameters {
         booleanParam(name: 'parameter_name', value: false)
+        booleanParam(name: 'EXECUTE_PULL', value: false)
+        booleanParam(name: 'EXECUTE_PUSH', value: false)
         
         
     }
@@ -37,5 +39,4 @@ pipeline {
                 echo 'Hello World push'
             }
         }
-    }
         }}
