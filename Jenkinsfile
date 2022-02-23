@@ -30,14 +30,15 @@ pipeline {
                 echo 'Hello World pull'
             }
         }
-        
         stage('Hello_push') {
-            
+                
             when {expression {EXECUTE_PUSH == "true"}
             
             steps {
                 echo 'Hello World push'
             }
-        }
-        }
-        }
+         }
+     }        
+ }            
+        
+            
