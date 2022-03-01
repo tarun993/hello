@@ -58,8 +58,8 @@ pipeline {
             steps{
                 script {
                     sh"""
-                        if [\$EXECUTE_PUSH == "true"]
-                        \$EXECUTE_PUSH=false
+                        if [$EXECUTE_PUSH == "true"]
+                        $EXECUTE_PUSH=false
                     """
                 }
             }
