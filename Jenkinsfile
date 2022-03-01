@@ -56,7 +56,7 @@ pipeline {
             steps{
                 
                 powershell '''if(${EXECUTE_PUSH}){
-$EXECUTE_PUSH=$false}'''
+$EXECUTE_PUSH=false}'''
                 
             }
         }  
