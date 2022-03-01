@@ -39,7 +39,7 @@ pipeline {
         
         stage("Wait") {
             steps {
-                sleep time: 20, unit: 'SECONDS' 
+                sleep time: 5, unit: 'SECONDS' 
             }
         }
         
@@ -57,7 +57,7 @@ pipeline {
                 steps{
                         
                 powershell '''
-                echo "${($EXECUTE_PUSH -eq "true")}"
+                write-host("${EXECUTE_PUSH -eq "true")}")
                 if($EXECUTE_PUSH -eq "true"){
                 echo "${EXECUTE_PUSH}"
                 $EXECUTE_PUSH = "false"
