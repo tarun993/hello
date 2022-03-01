@@ -79,8 +79,8 @@ pipeline {
                 echo 'Hello World push'
             }
         }
-        
-        post {
+     }   
+      post {
         // Clean after build
         always {
             cleanWs(cleanWhenNotBuilt: true,
@@ -91,6 +91,5 @@ pipeline {
                                [pattern: '.propsfile', type: 'EXCLUDE']])
         }
     }
-     }        
  }
              
