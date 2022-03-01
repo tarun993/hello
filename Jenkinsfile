@@ -1,25 +1,49 @@
 pipeline {
     agent any
+    
+ 
 
     options {
-        buildDiscarder(logRotator(numToKeepStr: '5'))
-        
-    }
-    parameters {
-        booleanParam(name: 'EXECUTE_PULL', defaultValue: false)
-        booleanParam(name: 'EXECUTE_PUSH', defaultValue: false)
-        
-        
+        timestamps()
+        buildDiscarder(logRotator(numToKeepStr: '15'))
+        disableConcurrentBuilds()
     }
     
+  
+    parameters{
+        booleanParam(defaultValue: true, name: 'EXECUTE_PULL')
+        booleanParam(defaultValue: true, name: 'EXECUTE_PUSH')
+        string(name: 'PLANET', defaultValue: 'Earth', description: 'Which planet are we on?')
+        string(name: 'GREETING', defaultValue: 'Hello', description: 'How shall we greet?')
+        
+    }
+        
     triggers {
-        cron('''
-            * * * * * %EXECUTE_PULL = true
-            */2 * * * * %EXECUTE_PUSH = true
+        parameterizedCron('''
+            * * * * * %EXECUTE_PULL=true
+            */3 * * * * %EXECUTE_PUSH=true
         ''')
         
     }
     stages {
+        
+        stage('echo') {
+            steps{
+            echo "${EXECUTE_PULL}"
+            echo ""
+            echo "${EXECUTE_PULL.getClass()}"
+            echo "${EXECUTE_PUSH}"
+            echo "${PLANET}"
+            echo "${GREETING}"
+            echo "${EXECUTE_PUSH.getClass()}"
+            }
+        }
+        
+        stage("Wait") {
+            steps {
+                sleep time: 20, unit: 'SECONDS' 
+            }
+        }
         
         stage('Hello_pull') {
             
@@ -29,6 +53,13 @@ pipeline {
                 echo 'Hello World pull'
             }
         }
+        
+        stage('check_stage'){
+            steps{
+                if(1+1 == 2)
+                EXECUTE_PUSH=false
+            }
+        }  
         stage('Hello_push') {
                 
             when {expression {EXECUTE_PUSH == "true"}}
@@ -36,7 +67,7 @@ pipeline {
             steps {
                 echo 'Hello World push'
             }
-         }
+        }
      }        
  }
-            
+             
