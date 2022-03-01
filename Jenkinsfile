@@ -29,7 +29,7 @@ pipeline {
         
         stage('echo') {
             steps{
-            echo "class of EXECUTE_PULL is ${EXECUTE_PULL}.getClass()"   
+                echo "class of EXECUTE_PULL is ${EXECUTE_PULL.getClass()}"   
             echo "EXECUTE_PULL=${EXECUTE_PULL}"
             echo "EXECUTE_PUSH=${EXECUTE_PUSH}"
             echo "${PLANET}"
