@@ -44,7 +44,7 @@ pipeline {
         
         stage('Hello_pull') {
             
-            when {expression {EXECUTE_PULL == "true"}}
+            when {expression {EXECUTE_PULL}}
             
             steps {
                 echo 'Hello World pull'
@@ -52,7 +52,7 @@ pipeline {
         }
         
         stage('check_stage'){
-            when {expression {EXECUTE_PULL == "true"}}
+            when {expression {EXECUTE_PULL}}
             steps{
                 
                 powershell '''if(${EXECUTE_PUSH}){
@@ -62,7 +62,7 @@ $EXECUTE_PUSH=$false}'''
         }  
         stage('Hello_push') {
                 
-            when {expression {EXECUTE_PUSH == "true"}}
+            when {expression {EXECUTE_PUSH}}
             
             steps {
                 echo "${EXECUTE_PUSH}"
