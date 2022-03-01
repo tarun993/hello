@@ -65,7 +65,7 @@ $EXECUTE_PUSH=$false}'''
         }  
         stage('Hello_push') {
                 
-            when {expression {EXECUTE_PUSH == "true"}}
+            when {expression {$EXECUTE_PUSH}}
             
             steps {
                 echo 'Hello World push'
