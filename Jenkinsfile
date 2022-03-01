@@ -39,9 +39,14 @@ pipeline {
         
         stage("Wait") {
             steps {
+                cleanWS()
                 sleep time: 5, unit: 'SECONDS' 
             }
         }
+        
+        
+        
+        
         
         stage('Hello_pull') {
             
