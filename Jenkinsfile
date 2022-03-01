@@ -58,14 +58,14 @@ pipeline {
             when {expression {EXECUTE_PULL == "true"}}
             steps{
                 
-                powershell '''if($EXECUTE_PUSH){
+                powershell '''if(${EXECUTE_PUSH}){
 $EXECUTE_PUSH=$false}'''
                 
             }
         }  
         stage('Hello_push') {
                 
-            when {expression {EXECUTE_PUSH}}
+            when {expression {EXECUTE_PUSH == "true"}
             
             steps {
                 echo 'Hello World push'
