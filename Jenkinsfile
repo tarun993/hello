@@ -11,8 +11,8 @@ pipeline {
     
   
     parameters{
-        booleanParam(defaultValue: true, name: 'EXECUTE_PULL')
-        booleanParam(defaultValue: true, name: 'EXECUTE_PUSH')
+        booleanParam(defaultValue:$true, name: 'EXECUTE_PULL')
+        booleanParam(defaultValue:$true, name: 'EXECUTE_PUSH')
         string(name: 'PLANET', defaultValue: 'Earth', description: 'Which planet are we on?')
         string(name: 'GREETING', defaultValue: 'Hello', description: 'How shall we greet?')
         
