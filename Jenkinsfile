@@ -58,7 +58,7 @@ pipeline {
             steps{
                 script {
                     sh"""
-                        if(1+1 == 2)
+                        if(true)
                         EXECUTE_PUSH=false
                     """
                 }
