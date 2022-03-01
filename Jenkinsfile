@@ -58,7 +58,7 @@ pipeline {
             when {expression {EXECUTE_PULL == "true"}}
             steps{
                 
-                powershell '''if($EXECUTE_PUSH=true){
+                powershell '''if($EXECUTE_PUSH){
 $EXECUTE_PUSH=false}'''
                 
             }
