@@ -57,10 +57,8 @@ pipeline {
         stage('check_stage'){
             steps{
                 script {
-                    sh"""
-                        if [$EXECUTE_PUSH == "true"]
-                        $EXECUTE_PUSH=false
-                    """
+                    sh '''if [$EXECUTE_PUSH=="true"]
+$EXECUTE_PUSH=false'''
                 }
             }
         }  
