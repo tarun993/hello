@@ -29,13 +29,10 @@ pipeline {
         
         stage('echo') {
             steps{
-            echo "${EXECUTE_PULL}"
-            echo ""
-            echo "${EXECUTE_PULL.getClass()}"
-            echo "${EXECUTE_PUSH}"
+            echo "EXECUTE_PULL=${EXECUTE_PULL}"
+            echo "$EXECUTE_PUSH=${EXECUTE_PUSH}"
             echo "${PLANET}"
             echo "${GREETING}"
-            echo "${EXECUTE_PUSH.getClass()}"
             }
         }
         
@@ -68,6 +65,7 @@ $EXECUTE_PUSH=$false}'''
             when {expression {EXECUTE_PUSH == "true"}}
             
             steps {
+                echo "${EXECUTE_PUSH}"
                 echo 'Hello World push'
             }
         }
