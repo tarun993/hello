@@ -99,7 +99,7 @@ pipeline {
                 pattern {
                     type('INCLUDE')
                     pattern('.gitignore')
-                }
+                }}
             }
         }
     }
