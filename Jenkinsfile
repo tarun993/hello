@@ -20,8 +20,8 @@ pipeline {
         
     triggers {
         parameterizedCron('''
-            * * * * * %EXECUTE_PULL=true
-            */3 * * * * %EXECUTE_PUSH=true
+            * * * * * %EXECUTE_PULL=$true
+            */3 * * * * %EXECUTE_PUSH=$true
         ''')
         
     }
@@ -30,7 +30,7 @@ pipeline {
         stage('echo') {
             steps{
             echo "EXECUTE_PULL=${EXECUTE_PULL}"
-            echo "$EXECUTE_PUSH=${EXECUTE_PUSH}"
+            echo "EXECUTE_PUSH=${EXECUTE_PUSH}"
             echo "${PLANET}"
             echo "${GREETING}"
             }
