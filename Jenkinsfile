@@ -55,8 +55,9 @@ pipeline {
         }
         
         stage('check_stage'){
+            when {expression {EXECUTE_PULL == "true"}}
             steps{
-                when {expression {EXECUTE_PULL == "true"}}
+                
                     powershell '''if($EXECUTE_PUSH=="true")
 $EXECUTE_PUSH=false'''
                 
