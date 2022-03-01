@@ -20,8 +20,8 @@ pipeline {
         
     triggers {
         parameterizedCron('''
-            * * * * * %EXECUTE_PULL=$true
-            */3 * * * * %EXECUTE_PUSH=$true
+            * * * * * %EXECUTE_PULL=true
+            */3 * * * * %EXECUTE_PUSH=true
         ''')
         
     }
