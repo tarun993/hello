@@ -59,7 +59,7 @@ pipeline {
                 script {
                     sh"""
                         if [\$EXECUTE_PUSH == "true"]
-                        EXECUTE_PUSH=false
+                        \$EXECUTE_PUSH=false
                     """
                 }
             }
