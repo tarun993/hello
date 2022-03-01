@@ -56,8 +56,12 @@ pipeline {
         
         stage('check_stage'){
             steps{
-                if(1+1 == 2)
-                EXECUTE_PUSH=false
+                script {
+                    sh"""
+                        if(1+1 == 2)
+                        EXECUTE_PUSH=false
+                    """
+                }
             }
         }  
         stage('Hello_push') {
