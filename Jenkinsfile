@@ -64,7 +64,7 @@ pipeline {
                 
                 
                 
-                $EXECUTE_PUSH = "false"
+                EXECUTE_PUSH = "false"
        
             }
         }  
