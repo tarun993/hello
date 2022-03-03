@@ -10,8 +10,8 @@ pipeline {
     
   
     parameters{
-        booleanParam(defaultValue:true, name: 'EXECUTE_PULL')
-        booleanParam(defaultValue:true, name: 'EXECUTE_PUSH')
+        booleanParam(defaultValue:false, name: 'EXECUTE_PULL')
+        booleanParam(defaultValue:false, name: 'EXECUTE_PUSH')
         string(name: 'PLANET', defaultValue: 'Earth', description: 'Which planet are we on?')
         string(name: 'GREETING', defaultValue: 'Hello', description: 'How shall we greet?')
         
@@ -59,14 +59,14 @@ pipeline {
         stage('check_stage'){
             when {expression {EXECUTE_PUSH == "true"}}
                 steps{
-                        
+                    script{     
                 powershell '''
                 write-host("${EXECUTE_PUSH -eq "true")}")
                 if($EXECUTE_PUSH -eq "true"){
                 echo "${EXECUTE_PUSH}"
                 $EXECUTE_PUSH = "false"
                 echo "${EXECUTE_PUSH}"}'''
-                
+                    }
             }
         }  
         stage('Hello_push') {
