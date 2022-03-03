@@ -63,9 +63,9 @@ pipeline {
                 powershell '''
                 write-host("${EXECUTE_PUSH -eq "true")}")
                 if($EXECUTE_PUSH.equals("true")){
-                echo "${EXECUTE_PUSH}"
+                
                 $EXECUTE_PUSH = "false"
-                echo "${EXECUTE_PUSH}"}'''
+               '''
                     }
             }
         }  
