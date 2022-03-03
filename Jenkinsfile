@@ -59,14 +59,13 @@ pipeline {
         stage('check_stage'){
             when {expression {EXECUTE_PUSH == "true"}}
                 steps{
-                    script{     
-                powershell '''
+     
+            
                 
-                if($EXECUTE_PUSH -eq "true"){
+                
                 
                 $EXECUTE_PUSH = "false"}
-               '''
-                    }
+       
             }
         }  
         stage('Hello_push') {
