@@ -62,7 +62,7 @@ pipeline {
                     script{     
                 powershell '''
                 
-                if($EXECUTE_PUSH.equals("true")){
+                if($EXECUTE_PUSH -eq "true"){
                 
                 $EXECUTE_PUSH = "false"}
                '''
