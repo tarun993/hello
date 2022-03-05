@@ -38,7 +38,6 @@ pipeline {
         
         stage("Wait") {
             steps {
-        
                 sleep time: 5, unit: 'SECONDS' 
             }
         }
@@ -64,7 +63,7 @@ pipeline {
                 write-host("${EXECUTE_PUSH -eq "true")}")
                 if($EXECUTE_PUSH -eq "true"){
                 echo "${EXECUTE_PUSH}"
-                $EXECUTE_PUSH = "false"
+                $env.EXECUTE_PUSH = "false"
                 echo "${EXECUTE_PUSH}"}'''
                 
             }
