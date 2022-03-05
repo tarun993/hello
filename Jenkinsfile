@@ -59,7 +59,7 @@ pipeline {
         stage('check_stage'){
             when {expression {EXECUTE_PUSH == "true"}}
                 steps{ 
-                env.EXECUTE_PUSH = "false"
+                \$env.EXECUTE_PUSH = "false"
             }
         }  
         stage('Hello_push') {
