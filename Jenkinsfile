@@ -58,14 +58,8 @@ pipeline {
         
         stage('check_stage'){
             when {expression {EXECUTE_PUSH == "true"}}
-                steps{
-     
-            
-                
-                
-                
-                EXECUTE_PUSH = "false"
-       
+                steps{ 
+                env.EXECUTE_PUSH = "false"
             }
         }  
         stage('Hello_push') {
