@@ -58,13 +58,13 @@ pipeline {
         stage('check_stage'){
             when {expression {EXECUTE_PUSH == "true"}}
                 steps{
-                        
+                    script {      
                 powershell '''
                 write-host "{$env.EXECUTE_PUSH -eq "true"} line63"
                 if("true" -eq "true"){
                 write-host("$EXECUTE_PUSH line 65")
                 set $env.EXECUTE_PUSH = "false"
-                write-host("$env.EXECUTE_PUSH line 67")}'''
+                write-host("$env.EXECUTE_PUSH line 67")}'''}
                 
             }
         }  
