@@ -8,10 +8,15 @@ pipeline {
         disableConcurrentBuilds()
     }
     
+    environment {
+        EXECUTE_PULL = 'true'
+        EXECUTE_PUSH = 'true'
+    }
+    
   
     parameters{
-        booleanParam(defaultValue:true, name: 'EXECUTE_PULL')
-        booleanParam(defaultValue:true, name: 'EXECUTE_PUSH')
+        booleanParam(defaultValue:$EXECUTE_PULL, name: 'EXECUTE_PULL')
+        booleanParam(defaultValue:$EXECUTE_PUSH, name: 'EXECUTE_PUSH')
         string(name: 'PLANET', defaultValue: 'Earth', description: 'Which planet are we on?')
         string(name: 'GREETING', defaultValue: 'Hello', description: 'How shall we greet?')
         
@@ -35,17 +40,6 @@ pipeline {
             echo "${GREETING}"
             }
         }
-        
-        stage("Wait") {
-            steps {
-                sleep time: 5, unit: 'SECONDS' 
-            }
-        }
-        
-        
-        
-        
-        
         stage('Hello_pull') {
             
             when {expression {EXECUTE_PULL == "true"}}
