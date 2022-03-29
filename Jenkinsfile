@@ -63,7 +63,7 @@ pipeline {
                 write-host("${EXECUTE_PUSH -eq "true")}")
                 if($EXECUTE_PUSH -eq "true"){
                 echo "${EXECUTE_PUSH}"
-                $env.EXECUTE_PUSH = "false"
+                EXECUTE_PUSH = "false"
                 echo "${EXECUTE_PUSH}"}'''
                 
             }
