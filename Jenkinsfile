@@ -60,11 +60,11 @@ pipeline {
                 steps{
                         
                 powershell '''
-                write-host "{$EXECUTE_PUSH -eq "true"} line63"
+                write-host "{$env.EXECUTE_PUSH -eq "true"} line63"
                 if("true" -eq "true"){
                 write-host("$EXECUTE_PUSH line 65")
-                set $EXECUTE_PUSH = "false"
-                write-host("$EXECUTE_PUSH line 67")}'''
+                set $env.EXECUTE_PUSH = "false"
+                write-host("$env.EXECUTE_PUSH line 67")}'''
                 
             }
         }  
