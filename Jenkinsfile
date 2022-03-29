@@ -62,9 +62,9 @@ pipeline {
                 powershell '''
                 write-host("${$EXECUTE_PUSH -eq "true")}")
                 if($EXECUTE_PUSH -eq "true"){
-                echo "${EXECUTE_PUSH}"
+                echo "${EXECUTE_PUSH} line 65"
                 EXECUTE_PUSH = "false"
-                echo "${EXECUTE_PUSH}"}'''
+                echo "${EXECUTE_PUSH} line 67"}'''
                 
             }
         }  
