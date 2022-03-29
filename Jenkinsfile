@@ -60,7 +60,7 @@ pipeline {
                 steps{
                         
                 powershell '''
-                write-host("${EXECUTE_PUSH} -eq "true")}")
+                write-host("${$EXECUTE_PUSH -eq "true")}")
                 if($EXECUTE_PUSH -eq "true"){
                 echo "${EXECUTE_PUSH}"
                 EXECUTE_PUSH = "false"
