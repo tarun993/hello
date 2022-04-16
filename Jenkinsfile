@@ -63,7 +63,7 @@ pipeline {
            
             
             steps {
-                echo "\${EXECUTE_PUSH_1} is $EXECUTE_PUSH_1"
+                echo "\${EXECUTE_PUSH_1} is $EXECUTE_PUSH"
                 echo "\${EXECUTE_PUSH} is ${EXECUTE_PUSH}"
                 echo "\${env.EXECUTE_PUSH} is ${env.EXECUTE_PUSH}"
                 echo "\${env:EXECUTE_PUSH} is ${env:EXECUTE_PUSH}"
