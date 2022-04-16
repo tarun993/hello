@@ -53,7 +53,7 @@ pipeline {
                 if("true" -eq "true"){
                 write-host("${env:EXECUTE_PUSH} line 65")
                 return "false"}
-                "    }
+                '''    }
                 
             }
         }  
