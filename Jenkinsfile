@@ -63,9 +63,9 @@ pipeline {
             when {expression {EXECUTE_PUSH == "true"}}
             
             steps {
-                echo "`${EXECUTE_PUSH} is ${EXECUTE_PUSH}"
-                echo "1${env.EXECUTE_PUSH} is ${env.EXECUTE_PUSH}"
-                echo "`${env:EXECUTE_PUSH} is ${env:EXECUTE_PUSH}"
+                echo "\${EXECUTE_PUSH} is ${EXECUTE_PUSH}"
+                echo "\${env.EXECUTE_PUSH} is ${env.EXECUTE_PUSH}"
+                echo "\${env:EXECUTE_PUSH} is ${env:EXECUTE_PUSH}"
                 echo 'Hello World push'
             }
         }
