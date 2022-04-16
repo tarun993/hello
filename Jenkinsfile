@@ -52,7 +52,7 @@ pipeline {
                 write-host "{${env:EXECUTE_PUSH} -eq "true"} line63"
                 if("true" -eq "true"){
                 write-host("${env:EXECUTE_PUSH} line 65")
-                Set-Content [String]env:EXECUTE_PUSH "false"
+                Set-Content env:EXECUTE_PUSH 'false'
                 write-host("${env:EXECUTE_PUSH} line 67")
                 write-host("${EXECUTE_PUSH} line 68")}'''
                         echo "\$EXECUTE_PUSH is $EXECUTE_PUSH}"    }
