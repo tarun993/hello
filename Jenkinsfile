@@ -53,6 +53,7 @@ pipeline {
                 if("true" -eq "true"){
                 write-host("${env:EXECUTE_PUSH} line 65")
                 [String]$global:EXECUTE_PUSH = "false" 
+                Export-ModuleMember -Variable $EXECUTE_PUSH
                 write-host("${env:EXECUTE_PUSH} line 67")
                 write-host("$EXECUTE_PUSH line 68")}'''
                         echo "\$EXECUTE_PUSH is $EXECUTE_PUSH}"    }
