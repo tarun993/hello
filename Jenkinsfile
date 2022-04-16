@@ -53,7 +53,7 @@ pipeline {
                 if($True){
                 return "false", "true"}
                 '''   )
-                        println "hello, ${EXECUTE_PUSH}, cat is ${cat}"
+                        println "hello, ${EXECUTE_PUSH}, cat is justice"
                         println "type is ${EXECUTE_PUSH.getClass()}"    }
                 
             }
