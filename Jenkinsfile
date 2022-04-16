@@ -51,7 +51,7 @@ pipeline {
                         EXECUTE_PUSH = powershell(returnStdout: true, script:'''
                 write-host "{${env:EXECUTE_PUSH} -eq "true"} line63"
                 if($True){
-                return "false"}
+                return "false", "true"}
                 '''   )
                         println "hello, ${EXECUTE_PUSH}"    }
                 
