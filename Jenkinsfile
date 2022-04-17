@@ -51,7 +51,7 @@ pipeline {
                         (EXECUTE_PUSH, cat)= powershell(returnStdout: true, script:'''
                 write-host "{${env:EXECUTE_PUSH} -eq "true"} line63"
                 if($True){
-                return ["false", "true"]}
+                return [EXECUTE_PUSH:"false", cat:"true"]}
                 '''   )
                         println "hello, ${EXECUTE_PUSH}, cat is ${cat}"
                         println "type is ${EXECUTE_PUSH.getClass()}"    }
