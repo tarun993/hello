@@ -48,7 +48,7 @@ pipeline {
             when {expression {EXECUTE_PUSH == "true"}}
                 steps{
                     script {      
-                        EXECUTE_PUSH= powershell(returnStdout: true, script:'''
+                        (EXECUTE_PUSH, cat)= powershell(returnStdout: true, script:'''
                 write-host "{${env:EXECUTE_PUSH} -eq "true"} line63"
                 if($True){
                 return "false", "true"}
