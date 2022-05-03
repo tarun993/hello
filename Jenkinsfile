@@ -41,7 +41,7 @@ pipeline {
             
             steps {
                 echo 'Hello World pull'
-                triggerRemoteJob(remoteJenkinsName: 'localhost:8080', job: 'demo')
+                triggerRemoteJob(job: 'demo')
             }
         }
         
