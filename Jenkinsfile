@@ -41,6 +41,7 @@ pipeline {
             
             steps {
                 echo 'Hello World pull'
+                build: 'demo'
             }
         }
         
@@ -53,7 +54,7 @@ pipeline {
                 if($True){
                 return 'false'}
                 '''   )
-                        println "hello, ${EXECUTE_PUSH}, cat is ${cat}"
+                        println "hello, ${EXECUTE_PUSH}, cat is "
                         println "type is ${EXECUTE_PUSH.getClass()}"    }
                 
             }
